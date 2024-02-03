@@ -1,7 +1,0 @@
-%div.min-h-screen.flex.items-center.justify-center.w-full.py-12.px-4.sm:px-6.lg:px-8
-  %div.max-w-md.w-full.space-y-8
-    %div
-      %h2.mt-6.text-center.text-3xl.font-extrabold.text-gray-900= @role.name
-      %p.mt-2.text-center.text-sm.text-gray-600= @role.description
-      = link_to 'Edit', edit_role_path(@role), class: 'block w-full px-4 py-2 bg-indigo-600 text-white font-semibold rounded hover:bg-indigo-700'
-      = button_to 'Delete', @role, method: :delete, data: { confirm: 'Are you sure?' }, class: 'block w-full px-4 py-2 bg-red-600 text-white font-semibold rounded mt-2 hover:bg-red-700'
