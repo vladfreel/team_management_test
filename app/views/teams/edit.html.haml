@@ -1,0 +1,16 @@
+%div.min-h-screen.flex.items-center.justify-center.w-full.py-12.px-4.sm:px-6.lg:px-8
+  %div.max-w-md.w-full.space-y-8
+    %div
+      %h2.mt-6.text-center.text-3xl.font-extrabold.text-gray-900 Edit team
+    = form_for(@team) do |f|
+      .div.mt-8.space-y-6
+        = f.error_notification
+        %input(type="hidden" name="authenticity_token" value=csrf_token)
+        .rounded-md.shadow-sm.-space-y-px
+          .div
+            = f.label :name, class: "sr-only", for: "team-name"
+            = f.text_field :name, id: "team-name", autofocus: true, placeholder: "Team name", class: "appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
+          .div
+            = f.label :description, for: "team-description", class: "sr-only"
+            = f.text_field :description, id: "team-description", placeholder: "Description", class: "appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
+        %button.inline-block.w-full.px-4.py-2.bg-indigo-600.text-white.font-semibold.rounded.hover:bg-indigo-700(type="submit") Update
